@@ -7,17 +7,17 @@
     "content-hash": "c4acae186589f23fac807bdacdf372c5",
     "packages": [
         {
-            "name": "beberlei/doctrineextensions",
-            "version": "v1.2.3",
+            "name": "regnartson/doctrineextensions",
+            "version": "v1.2.4",
             "source": {
                 "type": "git",
-                "url": "https://github.com/beberlei/DoctrineExtensions.git",
-                "reference": "a8747a2aef34f602c365cf2efd1abc94c5ae7e0a"
+                "url": "https://github.com/regnartson/DoctrineExtensions.git",
+                "reference": "a9f882addd39b279d9f9b5a9dec3928246a672f2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/beberlei/DoctrineExtensions/zipball/a8747a2aef34f602c365cf2efd1abc94c5ae7e0a",
-                "reference": "a8747a2aef34f602c365cf2efd1abc94c5ae7e0a",
+                "url": "https://api.github.com/repos/regnartson/DoctrineExtensions/zipball/a9f882addd39b279d9f9b5a9dec3928246a672f2",
+                "reference": "a9f882addd39b279d9f9b5a9dec3928246a672f2",
                 "shasum": ""
             },
             "require": {
