@@ -35,7 +35,7 @@ final class Version20180730044139 extends AbstractMigration
     {
         $platform = $this->getPlatform();
 
-        if (!in_array($platform, ['sqlite', 'mysql'])) {
+        if (!in_array($platform, ['sqlite', 'mysql', 'mssql'])) {
             $this->abortIf(true, 'Unsupported database platform: ' . $platform);
         }
 
@@ -55,7 +55,7 @@ final class Version20180730044139 extends AbstractMigration
             $this->addSql('CREATE INDEX IDX_4F60C6B18D93D649 ON ' . $timesheet . ' (user)');
         } else {
             $this->addSql('ALTER TABLE ' . $timesheet . ' DROP FOREIGN KEY FK_4F60C6B18D93D649');
-            $this->addSql('ALTER TABLE ' . $timesheet . ' ADD CONSTRAINT FK_4F60C6B18D93D649 FOREIGN KEY (user) REFERENCES ' . $user . ' (id) ON DELETE CASCADE');
+            $this->addSql('ALTER TABLE ' . $timesheet . ' ADD CONSTRAINT FK_4F60C6B18D93D649 FOREIGN KEY ([user]) REFERENCES ' . $user . ' (id) ON DELETE CASCADE');
         }
     }
 
@@ -67,7 +67,7 @@ final class Version20180730044139 extends AbstractMigration
     {
         $platform = $this->getPlatform();
 
-        if (!in_array($platform, ['sqlite', 'mysql'])) {
+        if (!in_array($platform, ['sqlite', 'mysql', 'mssql'])) {
             $this->abortIf(true, 'Unsupported database platform: ' . $platform);
         }
 
@@ -86,7 +86,7 @@ final class Version20180730044139 extends AbstractMigration
             $this->addSql('CREATE INDEX IDX_4F60C6B181C06096 ON ' . $timesheet . ' (activity_id)');
         } else {
             $this->addSql('ALTER TABLE ' . $timesheet . ' DROP FOREIGN KEY FK_4F60C6B18D93D649');
-            $this->addSql('ALTER TABLE ' . $timesheet . ' ADD CONSTRAINT FK_4F60C6B18D93D649 FOREIGN KEY (user) REFERENCES ' . $user . ' (id)');
+            $this->addSql('ALTER TABLE ' . $timesheet . ' ADD CONSTRAINT FK_4F60C6B18D93D649 FOREIGN KEY ([user]) REFERENCES ' . $user . ' (id)');
         }
     }
 }
