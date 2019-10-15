@@ -23,7 +23,8 @@ class DoctrineCompilerPass implements CompilerPassInterface
      */
     protected $allowedEngines = [
         'mysql',
-        'sqlite'
+        'sqlite',
+        'mssql',
     ];
 
     /**
@@ -70,14 +71,14 @@ class DoctrineCompilerPass implements CompilerPassInterface
         $engine = $this->findEngine();
 
         $configDir = realpath(
-            $container->getParameter('kernel.project_dir') . '/vendor/beberlei/doctrineextensions/config/'
+            $container->getParameter('kernel.project_dir') . '/vendor/regnartson/doctrineextensions/config/'
         );
 
         if (!file_exists($configDir)) {
             @trigger_error('Using deprecated doctrine extensions config directory', E_USER_DEPRECATED);
 
             $configDir = realpath(
-                $container->getParameter('kernel.project_dir') . '/vendor/beberlei/DoctrineExtensions/config/'
+                $container->getParameter('kernel.project_dir') . '/vendor/regnartson/DoctrineExtensions/config/'
             );
         }
 
