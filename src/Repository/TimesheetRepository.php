@@ -236,6 +236,8 @@ class TimesheetRepository extends EntityRepository
      */
     public function getMonthlyStats(User $user = null, ?DateTime $begin = null, ?DateTime $end = null)
     {
+        //TODO: Find alternative Query since it is not compatible with MsSQL -> order in which SQL command is executed and Namespace is assigned
+        /*        
         $qb = $this->getEntityManager()->createQueryBuilder();
 
         $qb->select('SUM(t.rate) as rate, SUM(t.duration) as duration, MONTH(t.begin) as month, YEAR(t.begin) as year')
