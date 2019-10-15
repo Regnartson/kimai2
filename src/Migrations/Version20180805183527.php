@@ -27,7 +27,7 @@ final class Version20180805183527 extends AbstractMigration
     {
         $platform = $this->getPlatform();
 
-        if (!in_array($platform, ['sqlite', 'mysql'])) {
+        if (!in_array($platform, ['sqlite', 'mysql', 'mssql'])) {
             $this->abortIf(true, 'Unsupported database platform: ' . $platform);
         }
 
@@ -48,7 +48,7 @@ final class Version20180805183527 extends AbstractMigration
     {
         $platform = $this->getPlatform();
 
-        if (!in_array($platform, ['sqlite', 'mysql'])) {
+        if (!in_array($platform, ['sqlite', 'mysql', 'mssql'])) {
             $this->abortIf(true, 'Unsupported database platform: ' . $platform);
         }
 
