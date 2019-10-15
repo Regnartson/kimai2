@@ -40,7 +40,8 @@ final class Version20190730123324 extends AbstractMigration
         $userTeams->addColumn('user_id', 'integer', ['length' => 11, 'notnull' => true]);
         $userTeams->addColumn('team_id', 'integer', ['length' => 11, 'notnull' => true]);
         $userTeams->addForeignKeyConstraint('kimai2_users', ['user_id'], ['id'], ['onDelete' => 'CASCADE'], 'FK_B5E92CF8A76ED395');
-        $userTeams->addForeignKeyConstraint('kimai2_teams', ['team_id'], ['id'], ['onDelete' => 'CASCADE'], 'FK_B5E92CF8296CD8AE');
+        //TO DO: find a solution for onDelete since MsSQL runs into ERROR with CASCADE since it might create a cycle
+        $userTeams->addForeignKeyConstraint('kimai2_teams', ['team_id'], ['id'], ['onDelete' => 'NO ACTION'], 'FK_B5E92CF8296CD8AE');
         $userTeams->setPrimaryKey(['user_id', 'team_id']);
 
         $customerTeams = $schema->createTable('kimai2_customers_teams');
