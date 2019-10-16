@@ -24,6 +24,7 @@ It is built with modern technologies such as Symfony, Bootstrap, RESTful API, Do
 - Database (MySQL, MariaDB, SQLite, MsSQL)
 - Webserver (nginx, Apache, IIS)
 - A modern browser
+- For the MsSQL deployment you need the SqlSrv Extensions for PHP
 - [Other libraries](https://www.kimai.org/download/)
 
 ### About
